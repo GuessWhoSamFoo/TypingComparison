@@ -13,4 +13,5 @@ Although the scatter plot does show DVORAK has an advantage in the sense of requ
 # Resources
 
 https://github.com/first20hours/google-10000-english
+
 https://www.nayuki.io/page/i-type-in-dvorak
