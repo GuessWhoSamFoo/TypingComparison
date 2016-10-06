@@ -4,6 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
+import unittest
+
 qwertyLetters = {
 }    
 
@@ -30,7 +32,7 @@ def lookupLetters(textString):
     
 def averageKey(results):
     for key in results:
-        results[key] = np.mean(results[key])
+        results[key] = np.mean(results[key]) * (len(results[key])) / 10000
     return results
     
     
@@ -59,6 +61,9 @@ y_dvorak = dvorakResults.values()
 
 
 #What is the best way to represent this data?
+#Weight graph to show frequency of words
+#Test cases of actual words
+#plt.autoscale(enable=True,axis='both',tight=None)
 plt.title('Comparison of QWERTY and DVORAK Gesture Typing')
 plt.scatter(x_qwerty,y_qwerty,c='r')
 plt.scatter(x_dvorak,y_dvorak,c='b')
@@ -67,6 +72,6 @@ plt.ylabel('Total Movement (px)')
 
 red_label = mpatches.Patch(color='red', label='QWERTY')
 blue_label = mpatches.Patch(color='blue', label='DVORAK')
-plt.legend(handles=[red_label,blue_label],loc=4)
+plt.legend(handles=[red_label,blue_label],loc=2)
 plt.show()
 
